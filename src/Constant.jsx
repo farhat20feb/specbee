@@ -1,0 +1,2 @@
+export const IMG_URL = "https://cdn.benzinga.com/files/images/story/2024/07/16/Screenshot-2024-07-16-at-5-32-35PM.png?optimize=medium&dpr=1&auto=webp&width=640";
+export const API_URL = "https://dummy-rest-api.specbee.site/api/v1/news";
