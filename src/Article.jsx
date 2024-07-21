@@ -68,7 +68,7 @@ const Article = ({ article }) => {
           {articleList?.length === 0 ? "<p className='text-center font-semibold px-2 py-2 bg-slate-500'>No Items Found</p>" : ''} 
           {articleList &&
             articleList?.map((article, index) => (
-              <div key={index}>
+              <div key={index} className="hover:bg-sky-100">
                 <article className="flex items-start space-x-6 p-6">
                   <img
                     src={IMG_URL}
