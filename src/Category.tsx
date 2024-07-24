@@ -1,13 +1,23 @@
 import { useDispatch } from "react-redux";
 import { filterArticleByCat, removeFilterByCat } from "./Slice/articleSlice";
-import { useState } from "react";
+import useArticleData from "./hooks/useArticleData";
 
-const Category = ({ article }) => {
+interface Article {
+  source: string | null;
+  author: string;
+  date: string;
+  body:string;
+}
+
+
+
+const Category: React.FC = () => {
   const dispatch = useDispatch();
-  const addCategory = (value, CheckVal) => {
-    CheckVal
+  const article: Article[] | any = useArticleData();
+  const addCategory = (value: string, checkVal: boolean) => {
+    checkVal
       ? dispatch(filterArticleByCat(value))
-      : dispatch(removeFilterByCat(value));
+      : dispatch(removeFilterByCat());
   };
 
   return (
@@ -20,8 +30,8 @@ const Category = ({ article }) => {
       <div>
         <div className="flex flex-col ml-4">
           {article &&
-            Array.from(new Set(article.map((item) => item.source))).map(
-              (uniqueCat, index) => (
+            Array.from(new Set(article.map((item:any) => item.source))).map(
+              (uniqueCat:any, index) => (
                 <label key={index} className="flex items-center space-x-2">
                   <input
                     type="checkbox"

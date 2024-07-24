@@ -1,11 +1,12 @@
 import { useDispatch, useSelector  } from 'react-redux';
 import { filterArticleByDate, filterArticleByTitle } from './Slice/articleSlice';
-import { useState } from 'react';
+import { RootState } from './utils/appStore';
+
 
 const SortBy = () => {
     const dispatch = useDispatch()
-    const filterByDate = useSelector((store) => store.category.filterByDate)
-    const filterByTitle = useSelector((store) => store.category.filterByTitle)
+    const filterByDate = useSelector((store : RootState | any) => store.category.filterByDate)
+    const filterByTitle = useSelector((store : RootState | any) => store.category.filterByTitle)
     const addDateFilter = () => {
         const filterVal = filterByDate ? false : true;
         dispatch(filterArticleByDate(filterVal))

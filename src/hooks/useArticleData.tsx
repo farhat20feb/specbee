@@ -3,7 +3,6 @@ import { API_URL } from './../Constant'
 
 const useArticleData = () => {
     const [article, setAtticle] = useState(null);
-
     useEffect(() => {
         fetcharticle();
     },[])
