@@ -91,7 +91,7 @@ const filteredArticles = articleData?.filter((article: Article) => {
           {articleList &&
             articleList?.map((article, index) => (
               <div key={index} className="hover:bg-sky-100">
-                <article className="flex items-start space-x-6 p-6 ">
+                <article className="flex items-start space-x-6 p-6">
                   <img
                     src={IMG_URL}
                     alt=""
